@@ -3,12 +3,11 @@ name: Test Manual Workflow
 
 on:
   workflow_dispatch:
-
-inputs:
-  test_message:
-    description: "The test message"
-    required: true
-    default: "Yoh!"
+    inputs:
+      test_message:
+        description: "The test message"
+        required: true
+        default: "Yoh!"
 
 jobs:
   do_stuff:
@@ -16,5 +15,5 @@ jobs:
 
     steps:
       - name: Displays test message
-        run: echo $INPUT_TEST_MESSAGE
+        run: echo ${{ github.event.inputs.test_message }}
 
